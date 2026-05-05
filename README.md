@@ -415,4 +415,4 @@ practice-based-research → arts-paper-writer (exegesis mode) → arts-paper-rev
 
 ## License
 
-MIT — College of Arts, Media and Technology (CAMT), Chiang Mai University
+College of Arts, Media and Technology (CAMT), Chiang Mai University
