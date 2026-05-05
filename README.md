@@ -6,6 +6,133 @@
 
 ---
 
+## 🚀 เริ่มต้นใช้งาน (Getting Started)
+
+> สำหรับผู้วิจัยที่ไม่เคยใช้ Claude Cowork หรือ skill มาก่อน — อ่านส่วนนี้ก่อน
+
+### ขั้นตอนที่ 1 — สิ่งที่ต้องมีก่อน
+
+| สิ่งที่ต้องการ | รายละเอียด | ลิงก์ |
+|--------------|-----------|-------|
+| **บัญชี Claude** | สมัครฟรีที่ claude.ai (ใช้ email มหาวิทยาลัยได้) | [claude.ai](https://claude.ai) |
+| **Claude Desktop App** | โหลด app สำหรับ Windows/Mac | [claude.ai/download](https://claude.ai/download) |
+| **Cowork mode** | เปิดใช้ใน Claude Desktop — เปิด app แล้วเลือก "Cowork" จากเมนู | — |
+| **Git** *(ทางเลือก)* | สำหรับ clone repo — ถ้าไม่มีสามารถโหลด ZIP แทนได้ | [git-scm.com](https://git-scm.com) |
+
+> **หมายเหตุ**: Skills ชุดนี้ทำงานบน Claude Cowork (Claude Desktop) เท่านั้น ไม่ใช่ claude.ai บนเว็บ
+
+---
+
+### ขั้นตอนที่ 2 — ดาวน์โหลด Skills จาก GitHub
+
+**วิธีที่ 1 — ดาวน์โหลด ZIP (แนะนำสำหรับมือใหม่)**
+
+1. ไปที่หน้า GitHub ของ repository นี้
+2. คลิกปุ่มสีเขียว **`<> Code`** → เลือก **`Download ZIP`**
+3. แตกไฟล์ ZIP ที่ดาวน์โหลดมา
+4. จะได้โฟลเดอร์ `camt-arts-research-skills/` พร้อมใช้
+
+**วิธีที่ 2 — Clone ผ่าน Git**
+
+```bash
+git clone https://github.com/<username>/camt-arts-research-skills.git
+```
+
+---
+
+### ขั้นตอนที่ 3 — ติดตั้ง Skills ใน Claude Cowork
+
+1. เปิด **Claude Desktop** และเข้าสู่ระบบด้วยบัญชี Claude
+2. คลิก **"Cowork"** จากเมนูด้านซ้าย
+3. คลิก **"Select Folder"** — เลือกโฟลเดอร์ที่ดาวน์โหลดไว้ (`camt-arts-research-skills/`) หรือโฟลเดอร์ที่เก็บงานวิจัยของคุณ
+4. เปิด **Settings** (⚙️) → ไปที่ **Plugins / Skills**
+5. คลิก **"Add Skill"** หรือ **"Install from folder"**
+6. เลือกโฟลเดอร์ `camt-arts-research-skills/`
+7. Claude จะอ่านไฟล์ `SKILL.md` แต่ละโฟลเดอร์อัตโนมัติ
+
+> ✅ **ติดตั้งสำเร็จ** เมื่อเห็นชื่อ skills ปรากฏใน Skills list เช่น `arts-paper-writer`, `arts-deep-research` เป็นต้น
+
+---
+
+### ขั้นตอนที่ 4 — เลือก Skill ที่เหมาะกับคุณ
+
+#### 🟢 มือใหม่ — เริ่มที่นี่
+
+**กรณีที่ 1: ยังไม่มีหัวข้อ / อยากทำวิจัยตั้งแต่ต้น**
+```
+→ ใช้: arts-research-pipeline
+→ พิมพ์: "อยากเริ่มทำวิจัยเรื่อง [หัวข้อ] ช่วย manage pipeline ให้หน่อย"
+```
+
+**กรณีที่ 2: มีหัวข้อแล้ว อยากหาเอกสารอ้างอิง**
+```
+→ ใช้: arts-deep-research
+→ พิมพ์: "ช่วยหาเอกสารอ้างอิงเกี่ยวกับ [หัวข้อ] ให้หน่อย"
+```
+
+**กรณีที่ 3: มีข้อมูลแล้ว อยากเขียนบทความ**
+```
+→ ใช้: arts-paper-writer
+→ พิมพ์: "ช่วยเขียนบทความวิจัยเรื่อง [หัวข้อ] ให้หน่อย"
+```
+
+**กรณีที่ 4: เขียนบทความเสร็จแล้ว อยากให้ตรวจ**
+```
+→ ใช้: arts-paper-reviewer
+→ พิมพ์: "ช่วยตรวจบทความนี้แบบ peer review" แล้ว paste บทความ
+```
+
+#### 🔵 มีประสบการณ์บ้างแล้ว
+
+| ต้องการ | Skill | ตัวอย่างคำสั่ง |
+|---------|-------|--------------|
+| จัด citation/bibliography | `arts-citation-formatter` | "ช่วยจัดรูปแบบ reference ให้เป็น APA 7" |
+| วิจัยเชิงปฏิบัติ / เขียน exegesis | `practice-based-research` | "ฉันสร้างผลงานเป็นส่วนหนึ่งของวิจัย จะเขียน exegesis ยังไง" |
+| วิเคราะห์งานศิลปะ / ภาพ | `visual-analysis` | "วิเคราะห์ภาพ [ชื่องาน] แบบ formal analysis" |
+| ส่งบทความแก้ไขรอบสอง | `arts-paper-reviewer` | "ช่วยตรวจ revision รอบสอง" |
+
+---
+
+### ขั้นตอนที่ 5 — ตัวอย่างการใช้งานครั้งแรก
+
+**ตัวอย่าง: นักวิจัยที่ต้องการเขียนบทความสำหรับวารสาร TCI**
+
+```
+คุณพิมพ์:
+"ฉันมีงานวิจัยเรื่องจิตรกรรมไทยร่วมสมัยกับอัตลักษณ์ท้องถิ่น
+อยากส่งวารสาร วิจิตรศิลป์ (TCI Tier 1) ช่วยเริ่มต้นให้หน่อย"
+
+Claude จะ:
+1. เรียก arts-paper-writer → Intake Planner Agent
+2. ถามข้อมูล 6 ข้อ (RQ, methodology, contributions, word limit ฯลฯ)
+3. เสนอ structure ที่เหมาะสม (IMRaD หรือ Exegesis)
+4. สร้าง Paper Plan Card
+5. รอ confirm ก่อนเริ่มเขียน
+```
+
+> 💡 **สังเกต**: Claude จะถามก่อนเสมอ ไม่เริ่มทำงานทันที — นี่คือ Iron Rule IR-1 เพื่อให้แน่ใจว่าเข้าใจความต้องการถูกต้อง
+
+---
+
+### คำถามที่พบบ่อย
+
+**Q: ต้องโหลดทุก skill ไหม?**
+ไม่จำเป็น โหลดเฉพาะที่ต้องการได้ แต่ถ้าใช้ `arts-research-pipeline` แนะนำให้มี `arts-deep-research` และ `arts-paper-writer` ด้วย เพราะ pipeline ส่งงานข้ามไปมาระหว่าง skills
+
+**Q: ใช้ภาษาอะไรพิมพ์?**
+ภาษาไทยหรืออังกฤษก็ได้ — ทุก skill รองรับทั้งสองภาษา
+
+**Q: ถ้า stuck ไม่รู้จะทำอะไรต่อ?**
+พิมพ์ว่า `"ฉันควรทำขั้นตอนไหนต่อ?"` หรือ `"อธิบายสิ่งที่กำลังทำอยู่ให้หน่อย"` — Claude จะ guide ต่อ
+
+**Q: ข้อมูลวิจัยของฉันปลอดภัยไหม?**
+Claude ไม่เก็บข้อมูลระหว่าง session โปรดอ่านนโยบายที่ [anthropic.com/privacy](https://www.anthropic.com/privacy)
+
+**Q: ต่างจาก ChatGPT ยังไง?**
+Skills ชุดนี้ออกแบบเฉพาะสำหรับงานวิจัยศิลปะไทย มี TCI format, Thai cultural framework, Iron Rules ป้องกัน error ที่พบบ่อย และ bibliography verification จากฐานข้อมูลไทย (TCI, ThaiLIS, SAC)
+
+---
+
 ## 7 Skills
 
 | Skill | วัตถุประสงค์หลัก | Trigger keywords |
@@ -242,7 +369,7 @@ TCI (Thai-Journal Citation Index) — บังคับสำหรับกา
 
 ## Typical Workflow
 
-### เริ่มโครงการวิจัยใหม่
+### เริ่มโครงการวิจัยใหม่ (แนะนำสำหรับมือใหม่)
 ```
 arts-research-pipeline → arts-deep-research → arts-paper-writer
 → arts-paper-reviewer → arts-paper-writer (revision) → arts-citation-formatter
