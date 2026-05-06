@@ -30,7 +30,7 @@
 1. ไปที่หน้า GitHub ของ repository นี้
 2. คลิกปุ่มสีเขียว **`<> Code`** → เลือก **`Download ZIP`**
 3. แตกไฟล์ ZIP ที่ดาวน์โหลดมา
-4. จะได้โฟลเดอร์ `camt-arts-research-skills/` พร้อมใช้
+4. จะได้โฟลเดอร์ `camt-arts-research-skills-zip/` พร้อมใช้
 
 **วิธีที่ 2 — Clone ผ่าน Git**
 
@@ -44,11 +44,11 @@ git clone https://github.com/<username>/camt-arts-research-skills.git
 
 1. เปิด **Claude Desktop** และเข้าสู่ระบบด้วยบัญชี Claude
 2. คลิก **"Cowork"** จากเมนูด้านซ้าย
-3. คลิก **"Select Folder"** — เลือกโฟลเดอร์ที่ดาวน์โหลดไว้ (`camt-arts-research-skills/`) หรือโฟลเดอร์ที่เก็บงานวิจัยของคุณ
-4. เปิด **Settings** (⚙️) → ไปที่ **Plugins / Skills**
-5. คลิก **"Add Skill"** หรือ **"Install from folder"**
-6. เลือกโฟลเดอร์ `camt-arts-research-skills/`
-7. Claude จะอ่านไฟล์ `SKILL.md` แต่ละโฟลเดอร์อัตโนมัติ
+3. คลิก **"Select Folder"** — เลือกโฟลเดอร์ที่ดาวน์โหลดไว้ (`creative-resarch-skills-main/`)
+4. เปิด **Settings** (⚙️) → ไปที่ **Customize / Skills**
+5. คลิก **"Create Skill"** แล้ว **"Upload Skill"**
+6. เลือกโฟลเดอร์ `camt-arts-research-skills-zip/`
+7. Claude จะอ่านไฟล์ `SKILL.md หรือ ไฟล์.zip เท่านั้น`
 
 > ✅ **ติดตั้งสำเร็จ** เมื่อเห็นชื่อ skills ปรากฏใน Skills list เช่น `arts-paper-writer`, `arts-deep-research` เป็นต้น
 
