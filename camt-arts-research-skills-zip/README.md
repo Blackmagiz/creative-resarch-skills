@@ -1,0 +1,418 @@
+# CAMT Arts Research Skills v2.0
+
+**ชุด skill สำหรับนักวิจัยวิทยาลัยศิลปะ สื่อ และเทคโนโลยี (CAMT) มหาวิทยาลัยเชียงใหม่**
+
+รองรับการทำวิจัยเชิงสร้างสรรค์ตั้งแต่ต้นจนจบ — ตั้งแต่การกำหนด RQ, ทบทวนวรรณกรรม, เขียนบทความ, ผ่าน peer review, ไปจนถึงการจัด citation ให้ตรงมาตรฐาน TCI Tier 1–2 และ Scopus Q1–Q4
+
+---
+
+## 🚀 เริ่มต้นใช้งาน (Getting Started)
+
+> สำหรับผู้วิจัยที่ไม่เคยใช้ Claude Cowork หรือ skill มาก่อน — อ่านส่วนนี้ก่อน
+
+### ขั้นตอนที่ 1 — สิ่งที่ต้องมีก่อน
+
+| สิ่งที่ต้องการ | รายละเอียด | ลิงก์ |
+|--------------|-----------|-------|
+| **บัญชี Claude** | สมัครฟรีที่ claude.ai (ใช้ email มหาวิทยาลัยได้) | [claude.ai](https://claude.ai) |
+| **Claude Desktop App** | โหลด app สำหรับ Windows/Mac | [claude.ai/download](https://claude.ai/download) |
+| **Cowork mode** | เปิดใช้ใน Claude Desktop — เปิด app แล้วเลือก "Cowork" จากเมนู | — |
+| **Git** *(ทางเลือก)* | สำหรับ clone repo — ถ้าไม่มีสามารถโหลด ZIP แทนได้ | [git-scm.com](https://git-scm.com) |
+
+> **หมายเหตุ**: Skills ชุดนี้ทำงานบน Claude Cowork (Claude Desktop) เท่านั้น ไม่ใช่ claude.ai บนเว็บ
+
+---
+
+### ขั้นตอนที่ 2 — ดาวน์โหลด Skills จาก GitHub
+
+**วิธีที่ 1 — ดาวน์โหลด ZIP (แนะนำสำหรับมือใหม่)**
+
+1. ไปที่หน้า GitHub ของ repository นี้
+2. คลิกปุ่มสีเขียว **`<> Code`** → เลือก **`Download ZIP`**
+3. แตกไฟล์ ZIP ที่ดาวน์โหลดมา
+4. จะได้โฟลเดอร์ `camt-arts-research-skills/` พร้อมใช้
+
+**วิธีที่ 2 — Clone ผ่าน Git**
+
+```bash
+git clone https://github.com/<username>/camt-arts-research-skills.git
+```
+
+---
+
+### ขั้นตอนที่ 3 — ติดตั้ง Skills ใน Claude Cowork
+
+1. เปิด **Claude Desktop** และเข้าสู่ระบบด้วยบัญชี Claude
+2. คลิก **"Cowork"** จากเมนูด้านซ้าย
+3. คลิก **"Select Folder"** — เลือกโฟลเดอร์ที่ดาวน์โหลดไว้ (`camt-arts-research-skills/`) หรือโฟลเดอร์ที่เก็บงานวิจัยของคุณ
+4. เปิด **Settings** (⚙️) → ไปที่ **Plugins / Skills**
+5. คลิก **"Add Skill"** หรือ **"Install from folder"**
+6. เลือกโฟลเดอร์ `camt-arts-research-skills/`
+7. Claude จะอ่านไฟล์ `SKILL.md` แต่ละโฟลเดอร์อัตโนมัติ
+
+> ✅ **ติดตั้งสำเร็จ** เมื่อเห็นชื่อ skills ปรากฏใน Skills list เช่น `arts-paper-writer`, `arts-deep-research` เป็นต้น
+
+---
+
+### ขั้นตอนที่ 4 — เลือก Skill ที่เหมาะกับคุณ
+
+#### 🟢 มือใหม่ — เริ่มที่นี่
+
+**กรณีที่ 1: ยังไม่มีหัวข้อ / อยากทำวิจัยตั้งแต่ต้น**
+```
+→ ใช้: arts-research-pipeline
+→ พิมพ์: "อยากเริ่มทำวิจัยเรื่อง [หัวข้อ] ช่วย manage pipeline ให้หน่อย"
+```
+
+**กรณีที่ 2: มีหัวข้อแล้ว อยากหาเอกสารอ้างอิง**
+```
+→ ใช้: arts-deep-research
+→ พิมพ์: "ช่วยหาเอกสารอ้างอิงเกี่ยวกับ [หัวข้อ] ให้หน่อย"
+```
+
+**กรณีที่ 3: มีข้อมูลแล้ว อยากเขียนบทความ**
+```
+→ ใช้: arts-paper-writer
+→ พิมพ์: "ช่วยเขียนบทความวิจัยเรื่อง [หัวข้อ] ให้หน่อย"
+```
+
+**กรณีที่ 4: เขียนบทความเสร็จแล้ว อยากให้ตรวจ**
+```
+→ ใช้: arts-paper-reviewer
+→ พิมพ์: "ช่วยตรวจบทความนี้แบบ peer review" แล้ว paste บทความ
+```
+
+#### 🔵 มีประสบการณ์บ้างแล้ว
+
+| ต้องการ | Skill | ตัวอย่างคำสั่ง |
+|---------|-------|--------------|
+| จัด citation/bibliography | `arts-citation-formatter` | "ช่วยจัดรูปแบบ reference ให้เป็น APA 7" |
+| วิจัยเชิงปฏิบัติ / เขียน exegesis | `practice-based-research` | "ฉันสร้างผลงานเป็นส่วนหนึ่งของวิจัย จะเขียน exegesis ยังไง" |
+| วิเคราะห์งานศิลปะ / ภาพ | `visual-analysis` | "วิเคราะห์ภาพ [ชื่องาน] แบบ formal analysis" |
+| ส่งบทความแก้ไขรอบสอง | `arts-paper-reviewer` | "ช่วยตรวจ revision รอบสอง" |
+
+---
+
+### ขั้นตอนที่ 5 — ตัวอย่างการใช้งานครั้งแรก
+
+**ตัวอย่าง: นักวิจัยที่ต้องการเขียนบทความสำหรับวารสาร TCI**
+
+```
+คุณพิมพ์:
+"ฉันมีงานวิจัยเรื่องจิตรกรรมไทยร่วมสมัยกับอัตลักษณ์ท้องถิ่น
+อยากส่งวารสาร วิจิตรศิลป์ (TCI Tier 1) ช่วยเริ่มต้นให้หน่อย"
+
+Claude จะ:
+1. เรียก arts-paper-writer → Intake Planner Agent
+2. ถามข้อมูล 6 ข้อ (RQ, methodology, contributions, word limit ฯลฯ)
+3. เสนอ structure ที่เหมาะสม (IMRaD หรือ Exegesis)
+4. สร้าง Paper Plan Card
+5. รอ confirm ก่อนเริ่มเขียน
+```
+
+> 💡 **สังเกต**: Claude จะถามก่อนเสมอ ไม่เริ่มทำงานทันที — นี่คือ Iron Rule IR-1 เพื่อให้แน่ใจว่าเข้าใจความต้องการถูกต้อง
+
+---
+
+### คำถามที่พบบ่อย
+
+**Q: ต้องโหลดทุก skill ไหม?**
+ไม่จำเป็น โหลดเฉพาะที่ต้องการได้ แต่ถ้าใช้ `arts-research-pipeline` แนะนำให้มี `arts-deep-research` และ `arts-paper-writer` ด้วย เพราะ pipeline ส่งงานข้ามไปมาระหว่าง skills
+
+**Q: ใช้ภาษาอะไรพิมพ์?**
+ภาษาไทยหรืออังกฤษก็ได้ — ทุก skill รองรับทั้งสองภาษา
+
+**Q: ถ้า stuck ไม่รู้จะทำอะไรต่อ?**
+พิมพ์ว่า `"ฉันควรทำขั้นตอนไหนต่อ?"` หรือ `"อธิบายสิ่งที่กำลังทำอยู่ให้หน่อย"` — Claude จะ guide ต่อ
+
+**Q: ข้อมูลวิจัยของฉันปลอดภัยไหม?**
+Claude ไม่เก็บข้อมูลระหว่าง session โปรดอ่านนโยบายที่ [anthropic.com/privacy](https://www.anthropic.com/privacy)
+
+**Q: ต่างจาก ChatGPT ยังไง?**
+Skills ชุดนี้ออกแบบเฉพาะสำหรับงานวิจัยศิลปะไทย มี TCI format, Thai cultural framework, Iron Rules ป้องกัน error ที่พบบ่อย และ bibliography verification จากฐานข้อมูลไทย (TCI, ThaiLIS, SAC)
+
+---
+
+## 7 Skills
+
+| Skill | วัตถุประสงค์หลัก | Trigger keywords |
+|-------|-----------------|-----------------|
+| [arts-research-pipeline](#arts-research-pipeline) | จัดการ workflow ครบวงจร 10 ขั้นตอน | "เริ่มวิจัย", "pipeline", "resume งานวิจัย" |
+| [arts-deep-research](#arts-deep-research) | ทบทวนวรรณกรรม + หาแหล่งข้อมูล 14 ฐาน | "ทบทวนวรรณกรรม", "หาเอกสาร", "literature review" |
+| [arts-paper-writer](#arts-paper-writer) | เขียนบทความ / exegesis / abstract | "เขียนบทความ", "draft", "abstract", "exegesis" |
+| [arts-paper-reviewer](#arts-paper-reviewer) | Peer review จำลอง 7 agents | "ตรวจบทความ", "review", "peer review" |
+| [arts-citation-formatter](#arts-citation-formatter) | จัดรูปแบบ citation 10 ประเภท | "อ้างอิง", "citation", "bibliography" |
+| [practice-based-research](#practice-based-research) | วิจัยเชิงปฏิบัติ + exegesis + process journal | "practice-based", "ผลงานสร้างสรรค์", "exegesis" |
+| [visual-analysis](#visual-analysis) | วิเคราะห์งานทัศนศิลป์ 5 frameworks | "วิเคราะห์ภาพ", "formal analysis", "iconography" |
+
+---
+
+## โครงสร้างไฟล์
+
+```
+camt-arts-research-skills/
+├── README.md                          ← ไฟล์นี้
+│
+├── arts-research-pipeline/            ← Pipeline manager
+│   ├── SKILL.md
+│   ├── agents/
+│   │   ├── pipeline_orchestrator_agent.md
+│   │   └── intake_assessment_agent.md
+│   ├── references/
+│   │   ├── failure_paths.md
+│   │   └── resume_protocol.md
+│   └── templates/
+│       ├── research_passport_template.md
+│       └── process_summary_template.md
+│
+├── arts-deep-research/                ← Literature research
+│   ├── SKILL.md
+│   ├── agents/
+│   │   ├── research_question_agent.md
+│   │   ├── socratic_mentor_agent.md
+│   │   ├── bibliography_agent.md
+│   │   ├── source_verification_agent.md
+│   │   └── synthesis_agent.md
+│   ├── references/
+│   │   ├── failure_paths.md
+│   │   ├── socratic_mode_protocol.md
+│   │   └── handoff_protocol.md
+│   └── templates/
+│       ├── research_brief_template.md
+│       └── literature_matrix_template.md
+│
+├── arts-paper-writer/                 ← Academic writing
+│   ├── SKILL.md
+│   ├── agents/
+│   │   ├── intake_planner_agent.md
+│   │   ├── section_writer_agent.md
+│   │   ├── exegesis_agent.md
+│   │   ├── bilingual_abstract_agent.md
+│   │   ├── revision_coach_agent.md
+│   │   └── writing_quality_agent.md
+│   ├── references/
+│   │   ├── failure_paths.md
+│   │   ├── anti_leakage_protocol.md
+│   │   ├── writing_quality_check.md
+│   │   └── plan_mode_protocol.md
+│   └── templates/
+│       ├── imrad_template.md
+│       ├── exegesis_template.md
+│       ├── bilingual_abstract_template.md
+│       └── revision_tracking_template.md
+│
+├── arts-paper-reviewer/               ← Peer review simulation
+│   ├── SKILL.md
+│   ├── agents/
+│   │   ├── eic_agent.md
+│   │   ├── field_analyst_agent.md
+│   │   ├── methodology_reviewer_agent.md
+│   │   ├── domain_reviewer_agent.md
+│   │   ├── cross_disciplinary_reviewer_agent.md
+│   │   ├── devils_advocate_agent.md
+│   │   └── editorial_synthesizer_agent.md
+│   ├── references/
+│   │   ├── editorial_decision_criteria.md
+│   │   ├── guided_mode_protocol.md
+│   │   ├── quality_rubrics.md
+│   │   └── re_review_protocol.md
+│   └── templates/
+│       ├── editorial_decision_template.md
+│       ├── review_report_template.md
+│       └── revision_response_template.md
+│
+├── arts-citation-formatter/           ← Citation formatting
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── citation_formatter_agent.md
+│   ├── references/
+│   │   └── failure_paths.md
+│   └── templates/
+│       └── arts_citation_templates.md
+│
+├── practice-based-research/           ← Practice-led research
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── practice_guide_agent.md
+│   ├── references/
+│   │   └── failure_paths.md
+│   └── templates/
+│       └── process_journal_template.md
+│
+├── visual-analysis/                   ← Visual art analysis
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── visual_analysis_agent.md
+│   ├── references/
+│   │   └── failure_paths.md
+│   └── templates/
+│       └── analysis_worksheet_template.md
+│
+├── shared/                            ← Cross-skill resources
+│   ├── cross_agent_quality_definitions.md  ← FM codes, IR codes, Source Tiers
+│   ├── handoff_schemas.md                  ← 5 inter-skill data transfer formats
+│   ├── tci_compliance_guide.md             ← TCI 7 requirements + checklist
+│   └── mode_spectrum.md                    ← Mode tables ทุก skill
+│
+└── evals/                             ← Evaluation test suite
+    ├── README.md
+    ├── trigger_accuracy/
+    │   ├── positive_cases.md          ← 34 prompts ที่ควร trigger
+    │   ├── negative_cases.md          ← 10 prompts ที่ไม่ควร trigger
+    │   └── edge_cases.md              ← 8 กรณีกำกวม
+    ├── output_quality/
+    │   ├── iron_rules_checklist.md    ← ตรวจ 10 Iron Rules
+    │   ├── tci_compliance_cases.md    ← ตรวจ TCI 7 requirements
+    │   └── bilingual_abstract_cases.md
+    ├── failure_paths/
+    │   ├── fm_detection_cases.md      ← FM-A ถึง FM-G
+    │   └── recovery_protocol_cases.md
+    └── pipeline_flow/
+        ├── handoff_schema_cases.md    ← 5 handoff schemas
+        └── state_machine_cases.md     ← 10 state transitions
+```
+
+---
+
+## v2.0 Core Features
+
+### Iron Rules (10 กฎที่ละเมิดไม่ได้)
+
+| Code | Rule | บังคับใช้ใน |
+|------|------|-----------|
+| IR-1 | CONFIRM BEFORE ACT | ทุก skill |
+| IR-2 | NO AI-GENERATED CITATIONS | arts-deep-research, arts-citation-formatter |
+| IR-3 | GRAY ZONE = FAIL | arts-deep-research |
+| IR-4 | DA CRITICAL BLOCKS ACCEPT | arts-paper-reviewer |
+| IR-5 | ANTI-LEAKAGE | arts-paper-writer |
+| IR-6 | BILINGUAL ALIGNMENT | arts-paper-writer |
+| IR-7 | FONER FAIL = CANNOT WRITE | arts-paper-writer, arts-research-pipeline |
+| IR-8 | THREE LEVELS REQUIRED | visual-analysis |
+| IR-9 | EVIDENCE-BASED | visual-analysis |
+| IR-10 | ETHICS FIRST | practice-based-research |
+
+> รายละเอียดทั้งหมด: [shared/cross_agent_quality_definitions.md](shared/cross_agent_quality_definitions.md)
+
+---
+
+### Failure Modes (FM-A ถึง FM-G)
+
+| Code | ชื่อ | ตรวจโดย |
+|------|------|---------|
+| FM-A | Decorative Theory | arts-paper-writer, arts-paper-reviewer |
+| FM-B | Catalog Description | visual-analysis, arts-paper-reviewer |
+| FM-C | Thai Cultural Essentialism | visual-analysis, arts-paper-reviewer |
+| FM-D | Western Frame Imposition | visual-analysis, arts-paper-reviewer |
+| FM-E | Unverified References | arts-deep-research, arts-citation-formatter |
+| FM-F | Practice-Research Confusion | practice-based-research |
+| FM-G | Missing Cultural Sensitivity | visual-analysis, arts-paper-reviewer |
+
+---
+
+### Adaptive Checkpoint System (arts-research-pipeline)
+
+| Type | ใช้เมื่อ | Complexity Score |
+|------|---------|-----------------|
+| FULL | งานซับซ้อนสูง | ≥ 5 |
+| SLIM | งานตรงไปตรงมา | 2–4 |
+| MANDATORY | Integrity Gate — ข้ามไม่ได้เสมอ | ทุก score |
+
+**Complexity Score** คำนวณจาก 7 ปัจจัย: research type, primary data, cross-cultural, multiple media, collaboration, timeline, journal tier
+
+---
+
+### State Machine (arts-research-pipeline)
+
+```
+IDLE → INTAKE → PLAN → RESEARCH
+     → [INTEGRITY-1] → METHOD → WRITE
+     → [INTEGRITY-2] → REVIEW
+     → ACCEPT / MINOR / MAJOR / REJECT
+     → FINALIZE → COMPLETED
+
+พิเศษ: STALLED (ค้างกลางคัน), FAILED (FONER fail × 3)
+```
+
+**Research Passport** ติดตาม state ทุกขั้นตอน — ดู [arts-research-pipeline/templates/research_passport_template.md](arts-research-pipeline/templates/research_passport_template.md)
+
+---
+
+### Inter-Skill Handoff Schemas (5 schemas)
+
+| จาก | ไปยัง | Schema | Trigger |
+|-----|-------|--------|---------|
+| arts-deep-research | arts-paper-writer | Research Package | "เริ่มเขียน", "ready to write" |
+| arts-paper-writer | arts-paper-reviewer | Review Package | "ส่งตรวจ", "ready for review" |
+| arts-paper-reviewer | arts-paper-writer | Revision Package | "แก้ไขตาม reviewer" |
+| arts-paper-writer | arts-paper-reviewer | Re-review Package | "ส่งตรวจรอบสอง" |
+| arts-paper-writer | arts-citation-formatter | Citation Package | "จัดรูปแบบ reference" |
+
+> รายละเอียดทั้งหมด: [shared/handoff_schemas.md](shared/handoff_schemas.md)
+
+---
+
+### TCI Compliance (7 requirements)
+
+TCI (Thai-Journal Citation Index) — บังคับสำหรับการตีพิมพ์ในวารสารไทย
+
+1. Bilingual Abstract (Thai 200–300 คำ + English 200–300 words)
+2. Bilingual Keywords (Thai 5–7 + English 5–7)
+3. Author Information (ไทย + อังกฤษ + email + สังกัด)
+4. Conflict of Interest Statement
+5. AI Disclosure
+6. References format (TCI standard + Thai romanization)
+7. Figure Requirements (≥ 300 DPI + bilingual caption)
+
+> รายละเอียด: [shared/tci_compliance_guide.md](shared/tci_compliance_guide.md)
+
+---
+
+## Typical Workflow
+
+### เริ่มโครงการวิจัยใหม่ (แนะนำสำหรับมือใหม่)
+```
+arts-research-pipeline → arts-deep-research → arts-paper-writer
+→ arts-paper-reviewer → arts-paper-writer (revision) → arts-citation-formatter
+```
+
+### มีหัวข้อแล้ว เขียนบทความเลย
+```
+arts-paper-writer (plan mode) → arts-paper-writer (draft) → arts-paper-reviewer
+```
+
+### ตรวจ revision รอบสอง
+```
+arts-paper-writer (revision coach) → arts-paper-reviewer (re-review mode)
+```
+
+### วิจัยเชิงปฏิบัติ
+```
+practice-based-research → arts-paper-writer (exegesis mode) → arts-paper-reviewer
+```
+
+---
+
+## Eval Suite
+
+ทดสอบคุณภาพ skill ได้ที่ [evals/](evals/) ครอบคลุม:
+- **Trigger accuracy**: 52 test cases (34 positive + 10 negative + 8 edge)
+- **Output quality**: Iron Rules (10) + TCI compliance (7 requirements) + Bilingual abstract
+- **Failure path coverage**: FM-A ถึง FM-G detection + 6 recovery scenarios
+- **Pipeline flow**: 5 handoff schemas + 10 state transitions
+
+เป้าหมาย baseline: Trigger precision ≥ 90%, Iron Rules compliance ≥ 90%, FM detection ≥ 85%
+
+---
+
+## Version History
+
+| Version | Date | Changes |
+|---------|------|---------|
+| 2.0.0 | 2026-05-05 | Iron Rules (IR-1–IR-10), Adaptive Checkpoint, State Machine, Research Passport, Re-review Mode, Anti-leakage Protocol, WQC (7 dimensions), Socratic Mode, FONER Framework, Revision Coach, shared/ resources, evals/ suite, 7-skill architecture (removed performance-arts-research) |
+| 1.0.0 | 2026-04-01 | Initial release — 8 skills, basic SKILL.md structure |
+
+---
+
+## License
+
+MIT — College of Arts, Media and Technology (CAMT), Chiang Mai University
