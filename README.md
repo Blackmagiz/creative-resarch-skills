@@ -104,7 +104,7 @@ git clone https://github.com/<username>/camt-arts-research-skills.git
 
 Claude จะ:
 1. เรียก arts-paper-writer → Intake Planner Agent
-2. ถามข้อมูล 6 ข้อ (RQ, methodology, contributions, word limit ฯลฯ)
+2. ถามข้อมูล 6 ข้อ (Research Question, methodology, contributions, word limit ฯลฯ)
 3. เสนอ structure ที่เหมาะสม (IMRaD หรือ Exegesis)
 4. สร้าง Paper Plan Card
 5. รอ confirm ก่อนเริ่มเขียน
